@@ -9,7 +9,7 @@ import (
 )
 
 // Text file to be opened and read
-var txtfile = "imtest1_bin_translated.txt"
+var txtfile = "rtest1_bin_translated.txt"
 
 // Text file to be written to
 var txtfile_output = ""
@@ -56,6 +56,12 @@ func formatLine(line string) {
 func defineOpcode(line string) {
 	if len(line) >= opcodeSize {
 		line = line[:opcodeSize]
+
+		// This switch statement finds the opcode instruction
+		switch line {
+		case "10001011000":
+			fmt.Println("ADD") // Currently for testing
+		}
 		fmt.Println(line) // Currently for testing
 	}
 
